@@ -1,0 +1,77 @@
+#credit {
+
+	font-size: 10px;
+	margin: 0 auto;  
+	width: 180px; 
+	text-align: left;
+	margin-top: 20px;
+}
+
+#credit p{
+	font-size:10px;
+}
+#creditbox {
+	width: 100%;
+	text-align: center;
+}
+
+#help {
+	margin: 0 auto;  	
+	width: 350px; 
+	text-align: left;
+	float:left;
+	padding-top: 13px;
+	padding-left:20px;
+}
+#helpintro{
+	float:right;
+	padding-top: 20px;
+	padding-right: 20px;
+}
+
+#help p{
+	font-size:20px;
+}
+
+
+#intro {
+	margin: 0 auto;  
+	width: 280px; 
+	text-align: left;
+	float;right;
+	
+	margin-top: 30px;
+}
+
+#intro p{
+	font-size:20px;
+}
+#introbox {
+	width: 100%;
+	text-align: center;
+}
+
+
+#information {
+	font-size:16px;
+	margin: 0 auto;  
+	width: 500px; 
+	text-align: left;
+	margin-top: 15px;
+}
+
+#information p{
+	font-size:13px;
+}
+#informationbox {
+	font-size
+	width: 100%;
+	text-align: center;
+}
+
+ul {
+	padding-left:18px;
+}
+li {
+	font-size:13px;
+}

@@ -1,0 +1,104 @@
+#nswindow {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    position: fixed;
+    position: absolute;
+    overflow: hidden;
+    
+}
+
+#nswindow #nswindowContent {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    background:#FFFFFF;
+    overflow: auto; /*contains floating elements*/
+    /*IE6 rule*/
+    _zoom: 1;
+}
+
+#nswindow .loader {
+    background: url(../img/ns-window/loader.gif) 50% 20px no-repeat;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    width: 100%;
+    margin-top: -15px;
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    border: none;
+}
+
+#nswindow .title {
+    font-size: 15px;
+    /*IE6 rules*/
+   text-align: center;
+    _display: block;
+    _position: relative;
+    margin-top: 0px;
+}
+
+#nswindow .controlbar {
+    overflow: hidden;
+    padding: 0px 0px 0px 0px;
+    cursor: move;
+    /*IE6 rule*/
+    _zoom: 1;
+} 
+#nswindow a.close:hover {
+    background-position: bottom left;
+}
+
+.nswindowOverlay, .nswindowContainer {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+}
+* html .nswindowOverlay, * html .nswindowContainer { /* ie6 hack */
+    position: absolute;
+    height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+ width: expression(document.body.scrollWidth> document.body.offsetWidth? document.body.scrollWidth: document.body.offsetWidth+ 'px');
+} 
+#nswindow.black {
+	background: #222222;
+	border: none;
+}
+#nswindow.black .title {
+	font-weight: normal;
+	color:#222222;
+	background: #CCCCCC;
+}
+#nswindow.black .controlbar {
+	background: #CCCCCC;
+	border:none;
+	/*border-bottom:1px solid #222222;*/	
+	height: 25px;
+}
+ 
+
+/*------------------------------------------------------*/
+
+#nswindow.progress {
+	border:0px;
+	/*border: 1px solid #a7a7a7;*/
+	width:220px;
+	height:80px;
+}
+#nswindow.progress #nswindowContent {
+	left: 8px;
+	right: 8px;
+	top: 0px;
+	bottom: 8px;
+	border:0px;
+}
+
+/*#nswindow.progress  .loader {
+	background: url(../img/progress.gif) 15px 25px no-repeat;
+}*/

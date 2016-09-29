@@ -1,0 +1,63 @@
+.actionText {
+	font-size: 11px;
+	font-family: Helvetica;
+	fill : #E6E6E6;
+	text-shadow:1px 1px #080808;
+}
+
+.graph {
+	margin-top:5px;
+	margin-left:200px;
+	text-align:left;
+}
+
+.tick {
+	font-size: 11px;
+	font-family: Helvetica;
+	fill:#909090;
+}
+
+.sampleText {
+	font-size: 11px;
+	font-family: Helvetica;
+}
+
+.sampleNum {
+	font-size: 11px;
+	font-family: Helvetica;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #909090;
+	shape-rendering: crispEdges;
+}
+
+.dtlTitle {
+	font-size:22px;
+	margin-left:2px;
+	fill:#2c2c2c;
+	font-weight:bold;
+}
+
+.dtlCont {
+	font-size:15px;
+	fill:#2c2c2c;
+	font-weight:bold;
+}
+
+.dtlExm {
+	font-size:12px;
+	fill:#2c2c2c;
+}
+
+.dtlSum {
+	font-size:50px;
+	fill:#2c2c2c;
+	font-weight:bold;
+}
+
+.dtlPer {
+	font-size:35px;
+	fill:#2c2c2c;
+}

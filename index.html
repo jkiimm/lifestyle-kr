@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="utf-8" />
+		<title id="temp">Lifestyle according to Groups in Korea | AjouUniv. Information Design</title>
+		
+		<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="res/css/layout.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="res/css/tagmenu.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="res/css/popup.css" />
+		<link rel="stylesheet" href="res/css/d3style.css"/>
+		<link rel="stylesheet" href="res/css/crhl.css"/>
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="d3/d3.v3.min.js"></script>
+		<script type="text/javascript" src="res/js/popup.js"></script>
+		<script type="text/javascript" src="res/js/behavior.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				showIntro('black');
+			});
+			
+			
+			function showIntro(theme) {
+				$.nsWindow.open({
+					title : '<font style="font-weight:bold">Welcome to our page!</font>',
+					animate:false,					
+					width : 400,
+					height : 400,
+					dataUrl : 'intro.html',
+					theme : theme
+				});
+			}
+			function showWindow(theme) {
+				$.nsWindow.open({
+					title : '<font style="font-weight:bold">Credit</font>',
+					width : 550,
+					height : 430,
+					dataUrl : 'credit.html',
+					theme : theme
+				});
+			}
+			function showWindow2(theme) {
+				$.nsWindow.open({
+					title : '<font style="font-weight:bold">Help</font>',
+					width : 780,
+					height : 430,
+					dataUrl : 'help.html',
+					theme : theme
+				});
+			}
+			function showWindow3(theme) {
+				$.nsWindow.open({
+					title : '<font style="font-weight:bold">Info</font>',
+					animate:false,					
+					width : 600,
+					height : 400,
+					dataUrl : 'information.html',
+					theme : theme
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div class="article">
+			<div id = "titlebar">
+				<h1>Lifestyle according to Groups in Korea</h1>
+				<p>
+					The Korean Statistical Office investigates in order to know the life patterns of the people and how the people use their times in every 5 years.
+				</p>
+				<p id="lastPara">
+					This graph shows what Koreans do in each hour based on that data(2009).
+				</p>
+				<div class = "crhl">
+					
+					<a href="#" onclick="showWindow3('black');">info</a>
+					<a href="#" onclick="showWindow2('black');">help</a>
+					<a href="#" onclick="showWindow('black');">credit</a>
+				</div>
+				<hr width = "1110" noshade="noshade" size=1/>
+			</div>
+			<ul id="nav">
+				<li>
+					<a href="#" name="chkbox0" value="0" onclick="check_only(this.value, this.name)">All (reset)</a>
+				</li>
+				<li>
+					<a href="#" class="sub" tabindex="1">Sex</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox1" value="1" onclick="check_only(this.value, this.name)" />
+							Male
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox1" value="2" onclick="check_only(this.value, this.name)" />
+							Female
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#" class="sub" tabindex="1">Age</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox2" value="1" onclick="check_only(this.value, this.name)" />
+							10 - 19
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox2" value="2" onclick="check_only(this.value, this.name)" />
+							20 - 29
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox2" value="3" onclick="check_only(this.value, this.name)" />
+							30 - 39
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox2" value="4" onclick="check_only(this.value, this.name)" />
+							40 - 49
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox2" value="5" onclick="check_only(this.value, this.name)" />
+							50-
+							<br>
+							</a>
+						</li>
+
+					</ul>
+				</li>
+
+				<li>
+					<a href="#" class="sub" tabindex="1">Marriage</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox3" value="1" onclick="check_only(this.value, this.name)" />
+							Single
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox3" value="2" onclick="check_only(this.value, this.name)" />
+							Married
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox3" value="3" onclick="check_only(this.value, this.name)" />
+							Bereavement
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox3" value="4" onclick="check_only(this.value, this.name)" />
+							Divorced
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#" class="sub" tabindex="0">Preschool Children</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox4" value="0" onclick="check_only(this.value, this.name)">
+							No Childen</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox4" value="1" onclick="check_only(this.value, this.name)">
+							One</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox4" value="2" onclick="check_only(this.value, this.name)">
+							Two</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#" class="sub" tabindex="1">Economic</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox5" value="1" onclick="check_only(this.value, this.name)" />
+							Yes
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox5" value="2" onclick="check_only(this.value, this.name)" />
+							No
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#" class="sub" tabindex="1">Education</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox6" value="1" onclick="check_only(this.value, this.name)" />
+							Elementary
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox6" value="2" onclick="check_only(this.value, this.name)" />
+							Middle school
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox6" value="3" onclick="check_only(this.value, this.name)" />
+							High school
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox6" value="4" onclick="check_only(this.value, this.name)" />
+							Bachelor
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox6" value="5" onclick="check_only(this.value, this.name)" />
+							Master
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox6" value="6" onclick="check_only(this.value, this.name)" />
+							Doctor
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#" class="sub" tabindex="1">Industry</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="1" onclick="check_only(this.value, this.name)" />
+							Primary Industry
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="2" onclick="check_only(this.value, this.name)" />
+							Manufacturing
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="3" onclick="check_only(this.value, this.name)" />
+							Construction
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="4" onclick="check_only(this.value, this.name)" />
+							Whole sale / Retail
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="5" onclick="check_only(this.value, this.name)" />
+							Express
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="6" onclick="check_only(this.value, this.name)" />
+							Lodging / Restaurant
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="7" onclick="check_only(this.value, this.name)" />
+							Financial / Insurance
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="8" onclick="check_only(this.value, this.name)" />
+							Real estate science
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox7" value="9" onclick="check_only(this.value, this.name)" />
+							Public office / etc
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sub" tabindex="1">Job</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="1" onclick="check_only(this.value, this.name)" />
+							Manager
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="2" onclick="check_only(this.value, this.name)" />
+							Expert
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="3" onclick="check_only(this.value, this.name)" />
+							Clerks
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="4" onclick="check_only(this.value, this.name)" />
+							Service
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="5" onclick="check_only(this.value, this.name)" />
+							Salesman
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="6" onclick="check_only(this.value, this.name)" />
+							Farmer / Fisher
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="7" onclick="check_only(this.value, this.name)" />
+							Engineer
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="8" onclick="check_only(this.value, this.name)" />
+							Assembler
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox8" value="9" onclick="check_only(this.value, this.name)" />
+							Labor
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#" class="sub" tabindex="1">Profit</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox9" value="1" onclick="check_only(this.value, this.name)" />
+							Ordinary people
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox9" value="2" onclick="check_only(this.value, this.name)" />
+							Middle people
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox9" value="3" onclick="check_only(this.value, this.name)" />
+							Upper people
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sub" tabindex="1">Position</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox10" value="1" onclick="check_only(this.value, this.name)" />
+							Employer
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox10" value="2" onclick="check_only(this.value, this.name)" />
+							Employee
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox10" value="3" onclick="check_only(this.value, this.name)" />
+							Individual proprietor
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#" class="sub" tabindex="1">Satisfy</a><img src="res/images/up.gif" alt="" />
+					<ul>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox11" value="1" onclick="check_only(this.value, this.name)" />
+							Satisfied
+							<br>
+							</a>
+						</li>
+						<li>
+							<a><img src="res/images/empty.gif" />
+							<input type="checkbox" name="chkbox11" value="2" onclick="check_only(this.value, this.name)" />
+							Unsatisfied
+							<br>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="graph">
+				<h3 id="dynamicTitle">Current Tag : All</h3>
+				
+			</div>
+			<div id = "footline">
+				Copyrightⓒ2013 by O1A4, Ajou Univ Media Dept. All pictures cannot be copied without permission.
+			</div>
+		</div>
+
+		<!-- D3 CODE -->
+
+		<script type="text/javascript">
+			init();
+		</script>
+	</body>
+</html>
